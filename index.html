@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>OwlSight | Telescope</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A onepage portfolio HTML template by Unslate.co">
+    <meta name="keywords" content="html, css, javascript, jquery">
+    <meta name="author" content="Unslate.co">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+    <link rel="stylesheet" href="css/vendor/aos.css">
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/vendor/icomoon/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.8.1/nipplejs.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.1.0/nouislider.min.css" />
+
+    <!-- Theme Style -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/shin.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.8.1/nipplejs.min.js" defer></script>
+
+    <style>
+        .slider-container {
+            width: 400px;
+            margin: 20px auto;
+        }
+        .slider-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; 
+        }
+        .label {
+            font-size: 18px;
+            font-weight: bold;
+            width: 50px;
+            margin-right: 10px; 
+        }
+        .slider {
+            flex-grow: 1;
+        }
+        .marks {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: -10px;
+            padding-left: 60px; 
+        }
+        
+        .message-box {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px; 
+            padding: 15px;
+            border: 2px solid #333; 
+            border-radius: 10px;
+            background-color: #f0f0f0; 
+            color: #333; 
+            width: 80%; 
+            margin: 20px auto; 
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+
+    <nav class="unslate_co--site-mobile-menu">
+        <div class="close-wrap d-flex">
+            <a href="#" class="d-flex ml-auto js-menu-toggle">
+                <span class="close-label">Close</span>
+                <div class="close-times">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                </div>
+            </a>
+        </div>
+        <div class="site-mobile-inner"></div>
+    </nav>
+
+    <div class="unslate_co--site-wrap">
+        <div class="unslate_co--site-inner">
+            <nav class="unslate_co--site-nav site-nav-target">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between text-left">
+                        <div class="col-3">
+                            <div class="site-logo">
+                                <a href="index-sidebar-menu.html" class="unslate_co--site-logo">Controller<span></span></a>
+                            </div>
+                        </div>
+                        <div class="col text-right">
+                            <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                                <li>
+                                    <a href="https://haubg02.github.io/OwlSight/">
+                                        <img src="images/home1.jpg" alt="Image" width="45" style="vertical-align: middle; margin-right: 10px;">
+                                        Home
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
+                                <li>
+                                    <a href="#" class="js-menu-toggle">
+                                        <img src="images/control.jpg" alt="Menu Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+                                        Menu
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="cover-v1 jarallax overlay" style="background-image: url('images/cover_bg_1.jpg');" id="home-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-7 text-left">
+                            <div class="slider-container">
+                                <h1 class="title">Menu</h1>
+                        
+                                <!-- Pan slider -->
+                                <div class="slider-wrapper">
+                                    <div class="label">Pan </div>
+                                    <div id="panSlider" class="slider"></div>
+                                </div>
+                        
+                                <!-- Pan slider marks -->
+                                <div class="marks">
+                                    <span>0°</span>
+                                    <span>30°</span>
+                                    <span>60°</span>
+                                    <span>90°</span>
+                                </div>
+                        
+                                <!-- Tilt slider -->
+                                <div class="slider-wrapper">
+                                    <div class="label">Tilt</div>
+                                    <div id="tiltSlider" class="slider"></div>
+                                </div>
+                        
+                                <!-- Tilt slider marks -->
+                                <div class="marks">
+                                    <span>0°</span>
+                                    <span>30°</span>
+                                    <span>60°</span>
+                                    <span>90°</span>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <!-- Tilt Step Selection -->
+                                    <label for="tiltStep" class="custom-label">Tilt Step</label>
+                                    <select id="tiltStepSelect" class="custom-select">
+                                        <option value="1">1 degree</option>
+                                        <option value="2">2 degrees</option>
+                                        <option value="5">5 degrees</option>
+                                        <option value="10">10 degrees</option>
+                                    </select>
+
+                                    <button id="startButton" class="rounded-button">Start</button>
+                                    <button id="stopButton" class="rounded-button">Stop</button>
+                                </div>
+                                <h1 class="title">Auto   </h1>
+                                    <!-- Add Start and Stop buttons under Auto -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <button class="rounded-button" id="startAutoButton">Start Auto</button>
+                                    <button class="rounded-button" id="originButton">Origin</button>
+                                    <button class="rounded-button" id="stopAutoButton">Stop Auto</button>
+                                </div>
+                                <h1 class="title">Aline </h1>
+                                    <!-- Add Start and Stop buttons under Auto -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <button class="rounded-button" id="onLaserButton">On Laser</button>
+                                    <button class="rounded-button" id="homeButton">Home</button>
+                                    <button class="rounded-button" id="offLaserButton">Off Laser</button>
+                                </div>
+                                <!-- <h1 class="title">Current</h1>
+                                    <div class="angle-display">
+                                        <div class="angle-box" id="currentPan">Pan: 0°</div>
+                                        <div class="angle-box" id="currentTilt">Tilt: 0°</div>
+                                    </div>
+                                </div> -->
+                                <!-- Label to display selected angles in a box -->
+                                <h1 class="title">Termi</h1>
+                                    <div id="angleMessage" class="message-box">
+                                        Pan: 0°, Tilt: 0°, Tilt Step: 1 degree
+                                    </div>
+                                </div> 
+                                
+                                
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.1.0/nouislider.min.js"></script>
+            <script>
+                // Initialize Pan slider
+                var panSlider = document.getElementById('panSlider');
+                noUiSlider.create(panSlider, {
+                    start: [0, 90],
+                    connect: true,
+                    range: {
+                        'min': 0,
+                        'max': 90
+                    },
+                    step: 30
+                });
+            
+                // Initialize Tilt slider
+                var tiltSlider = document.getElementById('tiltSlider');
+                noUiSlider.create(tiltSlider, {
+                    start: [0, 90],
+                    connect: true,
+                    range: {
+                        'min': 0,
+                        'max': 90
+                    },
+                    step: 30
+                });
+            
+                // Initialize Tilt Step select
+                var tiltStepSelect = document.getElementById('tiltStepSelect');
+            
+                // Update angle message whenever the sliders are moved or tiltStep changes
+                panSlider.noUiSlider.on('update', function() {
+                    updateAngleMessage();
+                });
+            
+                tiltSlider.noUiSlider.on('update', function() {
+                    updateAngleMessage();
+                });
+            
+                tiltStepSelect.addEventListener('change', function() {
+                    updateAngleMessage();
+                });
+            
+                // Function to update the message displaying Pan, Tilt, and Tilt Step values
+                function updateAngleMessage() {
+                    const panValues = panSlider.noUiSlider.get().map(val => Math.round(val));
+                    const tiltValues = tiltSlider.noUiSlider.get().map(val => Math.round(val));
+                    const selectedTiltStep = tiltStepSelect.value;
+            
+                    const panDisplay = (panValues[0] === panValues[1]) ? `${panValues[0]}°` : `${panValues[0]}° - ${panValues[1]}°`;
+                    const tiltDisplay = (tiltValues[0] === tiltValues[1]) ? `${tiltValues[0]}°` : `${tiltValues[0]}° - ${tiltValues[1]}°`;
+                    const tiltStepDisplay = `${selectedTiltStep} degree${selectedTiltStep > 1 ? 's' : ''}`;
+            
+                    document.getElementById('angleMessage').textContent = `Pan: ${panDisplay}, Tilt: ${tiltDisplay}, Tilt Step: ${tiltStepDisplay}`;
+                }
+
+                function sendDataToServer() {
+                    const panValues = panSlider.noUiSlider.get().map(val => Math.round(val));
+                    const tiltValues = tiltSlider.noUiSlider.get().map(val => Math.round(val));
+                    const selectedTiltStep = tiltStepSelect.value;
+            
+                    const data = {
+                        pan: {
+                            start: panValues[0],
+                            end: panValues[1]
+                        },
+                        tilt: {
+                            start: tiltValues[0],
+                            end: tiltValues[1]
+                        },
+                        tiltStep: selectedTiltStep
+                    };
+            
+                    fetch('http://<raspberry-pi-ip>:5000/update-angles', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Data has been successfully sent:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending data:', error);
+                    });
+                }
+        
+                // Function to send stop signal to the server
+                function sendStopSignal() {
+                    const data = { action: 'stop' };
+        
+                    fetch('http://<raspberry-pi-ip>:5000/stop', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Stop signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending stop signal:', error);
+                    });
+                }
+        
+                // Add event listener for Start button
+                document.getElementById('startButton').addEventListener('click', function() {
+                    sendDataToServer();
+                });
+        
+                // Add event listener for Stop button
+                document.getElementById('stopButton').addEventListener('click', function() {
+                    sendStopSignal();
+                });
+
+
+                // Function to send Auto start signal
+                function startAuto() {
+                    const data = { action: 'start_auto' };
+                
+                    fetch('http://<raspberry-pi-ip>:5000/auto', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Auto start signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending auto start signal:', error);
+                    });
+                }
+                
+                // Function to send Origin signal
+                function sendOrigin() {
+                    const data = { action: 'origin' };
+                
+                    fetch('http://<raspberry-pi-ip>:5000/origin', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Origin signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending origin signal:', error);
+                    });
+                }
+                
+                // Function to send Auto stop signal
+                function stopAuto() {
+                    const data = { action: 'stop_auto' };
+                
+                    fetch('http://<raspberry-pi-ip>:5000/stop_auto', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Auto stop signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending auto stop signal:', error);
+                    });
+                }
+                
+                // Event listeners for Auto buttons
+                document.getElementById('startAutoButton').addEventListener('click', function() {
+                    startAuto();
+                });
+                
+                document.getElementById('originButton').addEventListener('click', function() {
+                    sendOrigin();
+                });
+                
+                document.getElementById('stopAutoButton').addEventListener('click', function() {
+                    stopAuto();
+                });
+
+                // Function to send On Laser signal
+                function onLaser() {
+                    const data = { action: 'on_laser' };
+                
+                    fetch('http://<raspberry-pi-ip>:5000/on_laser', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('On Laser signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending On Laser signal:', error);
+                    });
+                }
+                
+                // Function to send Home signal
+                function sendHome() {
+                    const data = { action: 'home' };
+                
+                    fetch('http://<raspberry-pi-ip>:5000/home', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Home signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending Home signal:', error);
+                    });
+                }
+                
+                // Function to send Off Laser signal
+                function offLaser() {
+                    const data = { action: 'off_laser' };
+                
+                    fetch('http://<raspberry-pi-ip>:5000/off_laser', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Off Laser signal sent to server:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error sending Off Laser signal:', error);
+                    });
+                }
+                
+                // Event listeners for Aline buttons
+                document.getElementById('onLaserButton').addEventListener('click', function() {
+                    onLaser();
+                });
+                
+                document.getElementById('homeButton').addEventListener('click', function() {
+                    sendHome();
+                });
+                
+                document.getElementById('offLaserButton').addEventListener('click', function() {
+                    offLaser();
+                });
+            </script>
+                  
+            <a href="#portfolio-section" class="mouse-wrap smoothscroll">
+                <span class="mouse">
+                    <span class="scroll"></span>
+                </span>
+                <span class="mouse-label">Scroll</span>
+            </a>
+        </div>
+
+        <footer class="unslate_co--footer unslate_co--section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <div class="footer-site-logo"><a href="index.html">OwlSight<span></span></a></div>
+                        <ul class="footer-site-social">
+                            <li><a href="https://www.facebook.com/vansinh.tong.560">Facebook</a></li>
+                            <li><a href="https://x.com/">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/hauc02/">Instagram</a></li>
+                            <li><a href="https://dribbble.com/">Dribbble</a></li>
+                            <li><a href="https://www.behance.net/">Behance</a></li>
+                        </ul>
+                        <p class="site-copyright">
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/vansinh.tong.560" target="_blank">OwlSight</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loader -->
+    <div id="unslate_co--overlayer"></div>
+    <div class="site-loader-wrap">
+        <div class="site-loader dark"></div>
+    </div>
+
+    <script src="js/scripts-dist.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <!-- Global site tag (gtag) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157808202-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-157808202-1');
+    </script>
+</body>
+</html>
